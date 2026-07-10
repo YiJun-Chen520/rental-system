@@ -17,7 +17,7 @@
         localStorage.removeItem('token');
         localStorage.removeItem('user');
         localStorage.removeItem('role');
-        window.location.href = '${pageContext.request.contextPath}/login.jsp';
+        window.location.href = '/login.jsp';
     }
     document.addEventListener('DOMContentLoaded', function() {
         var currentPage = window.location.pathname.split('/').pop();

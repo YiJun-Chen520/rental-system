@@ -15,7 +15,7 @@
         localStorage.removeItem('token');
         localStorage.removeItem('user');
         localStorage.removeItem('role');
-        window.location.href = '${pageContext.request.contextPath}/login.jsp';
+        window.location.href = '/login.jsp';
     }
     // 高亮当前菜单
     document.addEventListener('DOMContentLoaded', function() {

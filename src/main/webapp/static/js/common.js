@@ -226,9 +226,9 @@ function isLoggedIn() {
  * 退出登录
  */
 function logout() {
-    localStorage.removeItem('token');
-    localStorage.removeItem('user');
-    window.location.href = getContextPath() + '/login.jsp';
+    localStorage.clear();
+    // 直接跳转到根目录下的login.jsp
+    window.location.href = '/login.jsp';
 }
 
 /**
