@@ -30,7 +30,7 @@ public class TenantServiceImpl implements TenantService {
             throw new RuntimeException("该手机号已注册");
         }
         // 检查身份证号唯一性
-        existing = tenantDao.findByIdCard(tenant.getIDCard());
+        existing = tenantDao.findByIDCard(tenant.getIDCard());
         if (existing != null) {
             throw new RuntimeException("该身份证号已注册");
         }

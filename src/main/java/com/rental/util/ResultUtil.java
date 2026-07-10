@@ -3,7 +3,7 @@ package com.rental.util;
 import com.rental.dto.PageResult;
 import com.rental.dto.Result;
 
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**

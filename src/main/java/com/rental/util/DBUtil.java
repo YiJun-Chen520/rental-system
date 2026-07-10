@@ -25,7 +25,7 @@ public class DBUtil {
             }
             props.load(is);
             // 加载驱动
-            Class.forName(props.getProperty("driver", "com.mysql.cj.jdbc.Driver"));
+            Class.forName(props.getProperty("db.driver", "com.mysql.cj.jdbc.Driver"));
         } catch (Exception e) {
             throw new RuntimeException("初始化数据库配置失败", e);
         }
@@ -38,9 +38,9 @@ public class DBUtil {
      * @throws SQLException 连接异常
      */
     public static Connection getConnection() throws SQLException {
-        String url = props.getProperty("url");
-        String username = props.getProperty("username");
-        String password = props.getProperty("password");
+        String url = props.getProperty("db.url");
+        String username = props.getProperty("db.username");
+        String password = props.getProperty("db.password");
         return DriverManager.getConnection(url, username, password);
     }
 

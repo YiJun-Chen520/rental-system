@@ -30,7 +30,7 @@ public class OwnerServiceImpl implements OwnerService {
             throw new RuntimeException("该手机号已注册");
         }
         // 检查身份证号唯一性
-        existing = ownerDao.findByIdCard(owner.getIDCard());
+        existing = ownerDao.findByIDCard(owner.getIDCard());
         if (existing != null) {
             throw new RuntimeException("该身份证号已注册");
         }

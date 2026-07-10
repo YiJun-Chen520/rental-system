@@ -177,6 +177,12 @@
         // 当前选中的角色
         let currentRole = 'owner';
 
+        // 页面加载时设置默认值
+        window.onload = function() {
+            document.getElementById('account').value = '13800000001';
+            document.getElementById('password').value = '123456';
+        };
+
         /**
          * 切换角色
          * @param {string} role - 角色类型: owner/tenant/admin
@@ -192,28 +198,32 @@
                 }
             });
 
-            // 更新输入框标签
+            // 获取输入框元素
             const accountLabel = document.getElementById('accountLabel');
             const accountInput = document.getElementById('account');
+            const passwordInput = document.getElementById('password');
+            const registerLink = document.getElementById('registerLink');
 
+            // 更新输入框标签和默认值
             if (role === 'admin') {
                 accountLabel.textContent = '用户名';
                 accountInput.placeholder = '请输入用户名';
+                accountInput.value = 'admin';
+                passwordInput.value = '123456';
+                registerLink.classList.add('hidden');
+            } else if (role === 'tenant') {
+                accountLabel.textContent = '手机号';
+                accountInput.placeholder = '请输入手机号';
+                accountInput.value = '13900000001';
+                passwordInput.value = '123456';
+                registerLink.classList.remove('hidden');
             } else {
                 accountLabel.textContent = '手机号';
                 accountInput.placeholder = '请输入手机号';
-            }
-
-            // 显示/隐藏注册链接
-            const registerLink = document.getElementById('registerLink');
-            if (role === 'admin') {
-                registerLink.classList.add('hidden');
-            } else {
+                accountInput.value = '13800000001';
+                passwordInput.value = '123456';
                 registerLink.classList.remove('hidden');
             }
-
-            // 清空表单
-            document.getElementById('loginForm').reset();
         }
 
         /**

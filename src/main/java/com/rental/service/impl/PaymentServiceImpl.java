@@ -97,7 +97,7 @@ public class PaymentServiceImpl implements PaymentService {
      */
     @Override
     public void pay(int id) {
-        paymentDao.updatePayStatus(id, "已缴", LocalDate.now());
+        paymentDao.updatePayStatus(id, "已缴", java.sql.Date.valueOf(LocalDate.now()));
     }
 
     /**

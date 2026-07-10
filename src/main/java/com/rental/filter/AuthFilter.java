@@ -81,8 +81,8 @@ public class AuthFilter implements Filter {
      * @return 是否为公开路径
      */
     private boolean isPublicPath(String path) {
-        // 匹配：/api/owner/login、/api/owner/register、/api/tenant/login、/api/tenant/register、/api/admin/login
-        return path.matches(".*/(login|register)$");
+        // 匹配认证接口：/api/owner/auth、/api/tenant/auth、/api/admin/auth
+        return path.matches(".*/auth$");
     }
 
     /**
