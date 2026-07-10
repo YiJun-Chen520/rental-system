@@ -258,7 +258,7 @@
             var keyword = document.getElementById('keyword').value.trim();
             var token = localStorage.getItem('token');
 
-            var url = getContextPath() + '/api/admin/tenant?page=' + page + '&pageSize=' + pageSize;
+            var url = '/api/admin/tenant?page=' + page + '&pageSize=' + pageSize;
             if (keyword) {
                 url += '&keyword=' + encodeURIComponent(keyword);
             }
@@ -354,7 +354,7 @@
             }
 
             var token = localStorage.getItem('token');
-            fetch(getContextPath() + '/api/admin/tenant/' + id + '/status', {
+            fetch('/api/admin/tenant/' + id + '/status', {
                 method: 'PUT',
                 headers: {
                     'Authorization': 'Bearer ' + token,
@@ -388,7 +388,7 @@
             }
 
             var token = localStorage.getItem('token');
-            fetch(getContextPath() + '/api/admin/tenant/' + id, {
+            fetch('/api/admin/tenant/' + id, {
                 method: 'DELETE',
                 headers: {
                     'Authorization': 'Bearer ' + token

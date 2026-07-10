@@ -275,7 +275,7 @@
             var status = document.getElementById('statusFilter').value;
             var token = localStorage.getItem('token');
 
-            var url = getContextPath() + '/api/admin/contract?page=' + page + '&pageSize=' + pageSize;
+            var url = '/api/admin/contract?page=' + page + '&pageSize=' + pageSize;
             if (status !== '') {
                 url += '&status=' + status;
             }
@@ -380,7 +380,7 @@
             }
 
             var token = localStorage.getItem('token');
-            fetch(getContextPath() + '/api/admin/contract/' + id + '/terminate', {
+            fetch('/api/admin/contract/' + id + '/terminate', {
                 method: 'PUT',
                 headers: {
                     'Authorization': 'Bearer ' + token
@@ -412,7 +412,7 @@
             }
 
             var token = localStorage.getItem('token');
-            fetch(getContextPath() + '/api/admin/contract/' + id + '/expire', {
+            fetch('/api/admin/contract/' + id + '/expire', {
                 method: 'PUT',
                 headers: {
                     'Authorization': 'Bearer ' + token

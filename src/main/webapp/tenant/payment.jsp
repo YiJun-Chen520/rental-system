@@ -53,7 +53,7 @@
             var token = localStorage.getItem('token');
             var payStatus = document.getElementById('payStatusFilter').value;
 
-            var url = '${pageContext.request.contextPath}/api/tenant/payment?page=' + currentPage + '&pageSize=' + pageSize;
+            var url = '/api/tenant/payment?page=' + currentPage + '&pageSize=' + pageSize;
             if (payStatus) url += '&payStatus=' + encodeURIComponent(payStatus);
 
             fetch(url, {
@@ -112,7 +112,7 @@
 
         function payPayment(id) {
             var token = localStorage.getItem('token');
-            fetch('${pageContext.request.contextPath}/api/tenant/payment?action=pay&id=' + id, {
+            fetch('/api/tenant/payment?action=pay&id=' + id, {
                 method: 'PUT',
                 headers: {
                     'Authorization': 'Bearer ' + token

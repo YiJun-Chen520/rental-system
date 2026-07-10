@@ -82,7 +82,7 @@
 
         function loadReviews() {
             var token = localStorage.getItem('token');
-            fetch('${pageContext.request.contextPath}/api/tenant/review?page=' + currentPage + '&pageSize=' + pageSize, {
+            fetch('/api/tenant/review?page=' + currentPage + '&pageSize=' + pageSize, {
                 method: 'GET',
                 headers: {
                     'Authorization': 'Bearer ' + token
@@ -185,7 +185,7 @@
                 content: content
             };
 
-            var url = '${pageContext.request.contextPath}/api/tenant/review';
+            var url = '/api/tenant/review';
             var method = 'POST';
 
             if (id) {
@@ -221,7 +221,7 @@
             if (!confirm('确定删除该评价？')) return;
 
             var token = localStorage.getItem('token');
-            fetch('${pageContext.request.contextPath}/api/tenant/review?id=' + id, {
+            fetch('/api/tenant/review?id=' + id, {
                 method: 'DELETE',
                 headers: {
                     'Authorization': 'Bearer ' + token

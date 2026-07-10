@@ -66,7 +66,7 @@
 
         function loadProfile() {
             var token = localStorage.getItem('token');
-            fetch('${pageContext.request.contextPath}/api/tenant/auth?action=info', {
+            fetch('/api/tenant/auth?action=info', {
                 method: 'GET',
                 headers: {
                     'Authorization': 'Bearer ' + token
@@ -108,7 +108,7 @@
                 return;
             }
 
-            fetch('${pageContext.request.contextPath}/api/tenant/auth?action=update', {
+            fetch('/api/tenant/auth?action=update', {
                 method: 'PUT',
                 headers: {
                     'Authorization': 'Bearer ' + token,
@@ -154,7 +154,7 @@
             }
 
             var token = localStorage.getItem('token');
-            fetch('${pageContext.request.contextPath}/api/tenant/auth?action=changePassword', {
+            fetch('/api/tenant/auth?action=changePassword', {
                 method: 'PUT',
                 headers: {
                     'Authorization': 'Bearer ' + token,

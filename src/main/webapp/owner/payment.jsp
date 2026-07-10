@@ -410,7 +410,7 @@
             var payStatus = document.getElementById('payStatusFilter').value;
             var token = localStorage.getItem('token');
 
-            var url = getContextPath() + '/api/owner/payment?page=' + currentPage + '&pageSize=' + pageSize;
+            var url = '/api/owner/payment?page=' + currentPage + '&pageSize=' + pageSize;
             if (payStatus) url += '&payStatus=' + payStatus;
 
             fetch(url, {
@@ -532,7 +532,7 @@
             };
 
             var token = localStorage.getItem('token');
-            fetch(getContextPath() + '/api/owner/payment', {
+            fetch('/api/owner/payment', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -563,7 +563,7 @@
             if (!confirm('确定要将该费用标记为已缴纳吗？')) return;
 
             var token = localStorage.getItem('token');
-            fetch(getContextPath() + '/api/owner/payment?action=pay&id=' + id, {
+            fetch('/api/owner/payment?action=pay&id=' + id, {
                 method: 'PUT',
                 headers: { 'Authorization': 'Bearer ' + token }
             })

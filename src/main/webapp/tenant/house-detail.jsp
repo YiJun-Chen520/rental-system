@@ -42,7 +42,7 @@
 
         function loadHouseDetail() {
             var token = localStorage.getItem('token');
-            fetch('${pageContext.request.contextPath}/api/tenant/house?action=detail&id=' + houseId, {
+            fetch('/api/tenant/house?action=detail&id=' + houseId, {
                 method: 'GET',
                 headers: {
                     'Authorization': 'Bearer ' + token
@@ -74,7 +74,7 @@
 
         function loadReviews() {
             var token = localStorage.getItem('token');
-            fetch('${pageContext.request.contextPath}/api/tenant/house-review?houseId=' + houseId + '&page=' + currentPage + '&pageSize=' + pageSize, {
+            fetch('/api/tenant/house-review?houseId=' + houseId + '&page=' + currentPage + '&pageSize=' + pageSize, {
                 method: 'GET',
                 headers: {
                     'Authorization': 'Bearer ' + token

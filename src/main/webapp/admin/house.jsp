@@ -266,7 +266,7 @@
             var status = document.getElementById('statusFilter').value;
             var token = localStorage.getItem('token');
 
-            var url = getContextPath() + '/api/admin/house?page=' + page + '&pageSize=' + pageSize;
+            var url = '/api/admin/house?page=' + page + '&pageSize=' + pageSize;
             if (keyword) {
                 url += '&keyword=' + encodeURIComponent(keyword);
             }
@@ -372,7 +372,7 @@
          */
         function changeStatus(id, status) {
             var token = localStorage.getItem('token');
-            fetch(getContextPath() + '/api/admin/house/' + id + '/status', {
+            fetch('/api/admin/house/' + id + '/status', {
                 method: 'PUT',
                 headers: {
                     'Authorization': 'Bearer ' + token,
@@ -406,7 +406,7 @@
             }
 
             var token = localStorage.getItem('token');
-            fetch(getContextPath() + '/api/admin/house/' + id, {
+            fetch('/api/admin/house/' + id, {
                 method: 'DELETE',
                 headers: {
                     'Authorization': 'Bearer ' + token

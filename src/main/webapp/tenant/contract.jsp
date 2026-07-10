@@ -55,7 +55,7 @@
             var token = localStorage.getItem('token');
             var status = document.getElementById('statusFilter').value;
 
-            var url = '${pageContext.request.contextPath}/api/tenant/contract?page=' + currentPage + '&pageSize=' + pageSize;
+            var url = '/api/tenant/contract?page=' + currentPage + '&pageSize=' + pageSize;
             if (status) url += '&status=' + encodeURIComponent(status);
 
             fetch(url, {

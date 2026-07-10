@@ -55,7 +55,7 @@
             var minRent = document.getElementById('minRent').value;
             var maxRent = document.getElementById('maxRent').value;
 
-            var url = '${pageContext.request.contextPath}/api/tenant/house?page=' + currentPage + '&pageSize=' + pageSize;
+            var url = '/api/tenant/house?page=' + currentPage + '&pageSize=' + pageSize;
             if (keyword) url += '&keyword=' + encodeURIComponent(keyword);
             if (minRent) url += '&minRent=' + minRent;
             if (maxRent) url += '&maxRent=' + maxRent;

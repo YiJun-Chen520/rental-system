@@ -468,7 +468,7 @@
             var status = document.getElementById('statusFilter').value;
             var token = localStorage.getItem('token');
 
-            var url = getContextPath() + '/api/owner/house?page=' + currentPage + '&pageSize=' + pageSize;
+            var url = '/api/owner/house?page=' + currentPage + '&pageSize=' + pageSize;
             if (status) url += '&status=' + status;
             if (keyword) url += '&keyword=' + encodeURIComponent(keyword);
 
@@ -577,7 +577,7 @@
          */
         function openEditModal(id) {
             var token = localStorage.getItem('token');
-            fetch(getContextPath() + '/api/owner/house?id=' + id, {
+            fetch('/api/owner/house?id=' + id, {
                 method: 'GET',
                 headers: { 'Authorization': 'Bearer ' + token }
             })
@@ -639,7 +639,7 @@
             if (id) data.id = parseInt(id);
 
             var token = localStorage.getItem('token');
-            fetch(getContextPath() + '/api/owner/house', {
+            fetch('/api/owner/house', {
                 method: id ? 'PUT' : 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -671,7 +671,7 @@
             if (!confirm(msg)) return;
 
             var token = localStorage.getItem('token');
-            fetch(getContextPath() + '/api/owner/house?id=' + id, {
+            fetch('/api/owner/house?id=' + id, {
                 method: 'DELETE',
                 headers: { 'Authorization': 'Bearer ' + token }
             })

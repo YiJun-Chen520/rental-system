@@ -182,7 +182,7 @@
          */
         function loadStats() {
             var token = localStorage.getItem('token');
-            fetch(getContextPath() + '/api/admin/stats', {
+            fetch('/api/admin/stats', {
                 method: 'GET',
                 headers: {
                     'Authorization': 'Bearer ' + token

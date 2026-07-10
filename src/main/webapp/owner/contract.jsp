@@ -455,7 +455,7 @@
             var status = document.getElementById('statusFilter').value;
             var token = localStorage.getItem('token');
 
-            var url = getContextPath() + '/api/owner/contract?page=' + currentPage + '&pageSize=' + pageSize;
+            var url = '/api/owner/contract?page=' + currentPage + '&pageSize=' + pageSize;
             if (status) url += '&status=' + status;
 
             fetch(url, {
@@ -567,7 +567,7 @@
          */
         function loadFreeHouses() {
             var token = localStorage.getItem('token');
-            fetch(getContextPath() + '/api/owner/house?page=1&pageSize=100&status=free', {
+            fetch('/api/owner/house?page=1&pageSize=100&status=free', {
                 method: 'GET',
                 headers: { 'Authorization': 'Bearer ' + token }
             })
@@ -624,7 +624,7 @@
             };
 
             var token = localStorage.getItem('token');
-            fetch(getContextPath() + '/api/owner/contract', {
+            fetch('/api/owner/contract', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -655,7 +655,7 @@
             if (!confirm('确定要终止该合同吗？终止后不可恢复。')) return;
 
             var token = localStorage.getItem('token');
-            fetch(getContextPath() + '/api/owner/contract?action=terminate&id=' + id, {
+            fetch('/api/owner/contract?action=terminate&id=' + id, {
                 method: 'PUT',
                 headers: { 'Authorization': 'Bearer ' + token }
             })
@@ -681,7 +681,7 @@
             if (!confirm('确定要将该合同标记为到期吗？')) return;
 
             var token = localStorage.getItem('token');
-            fetch(getContextPath() + '/api/owner/contract?action=expire&id=' + id, {
+            fetch('/api/owner/contract?action=expire&id=' + id, {
                 method: 'PUT',
                 headers: { 'Authorization': 'Bearer ' + token }
             })

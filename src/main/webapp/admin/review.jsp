@@ -189,7 +189,7 @@
             currentPage = page;
             var token = localStorage.getItem('token');
 
-            var url = getContextPath() + '/api/admin/review?page=' + page + '&pageSize=' + pageSize;
+            var url = '/api/admin/review?page=' + page + '&pageSize=' + pageSize;
 
             fetch(url, {
                 method: 'GET',
@@ -286,7 +286,7 @@
             }
 
             var token = localStorage.getItem('token');
-            fetch(getContextPath() + '/api/admin/review/' + id, {
+            fetch('/api/admin/review/' + id, {
                 method: 'DELETE',
                 headers: {
                     'Authorization': 'Bearer ' + token

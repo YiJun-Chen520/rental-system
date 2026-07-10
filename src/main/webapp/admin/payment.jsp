@@ -367,7 +367,7 @@
             var paymentType = document.getElementById('paymentTypeFilter').value;
             var token = localStorage.getItem('token');
 
-            var url = getContextPath() + '/api/admin/payment?page=' + page + '&pageSize=' + pageSize;
+            var url = '/api/admin/payment?page=' + page + '&pageSize=' + pageSize;
             if (payStatus !== '') {
                 url += '&payStatus=' + payStatus;
             }
@@ -462,7 +462,7 @@
             }
 
             var token = localStorage.getItem('token');
-            fetch(getContextPath() + '/api/admin/payment/' + id + '/pay', {
+            fetch('/api/admin/payment/' + id + '/pay', {
                 method: 'PUT',
                 headers: {
                     'Authorization': 'Bearer ' + token
@@ -519,7 +519,7 @@
             }
 
             var token = localStorage.getItem('token');
-            fetch(getContextPath() + '/api/admin/payment', {
+            fetch('/api/admin/payment', {
                 method: 'POST',
                 headers: {
                     'Authorization': 'Bearer ' + token,
